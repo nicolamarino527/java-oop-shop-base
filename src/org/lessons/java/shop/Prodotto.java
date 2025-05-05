@@ -54,6 +54,14 @@ public class Prodotto {
         return this.prezzo.setScale(2, RoundingMode.DOWN);
     }
 
+    public BigDecimal getTaxes() {
+        return this.iva;
+    }
+
+    public String getDescription() {
+        return this.descrizione;
+    }
+
     public BigDecimal getTaxInclusivePrive() {
         return this.prezzo.add(prezzo.multiply(iva).setScale(2, RoundingMode.DOWN));
     }
@@ -62,6 +70,27 @@ public class Prodotto {
         return this.nome + "-" + this.codice;
     }
 
+    // metodi setter
+
+    public void setName(String nuovoNome) {
+        this.nome = nuovoNome;
+    }
+
+    public void setBrand(String nuavaMarca) {
+        this.marca = nuavaMarca;
+    }
+
+    public void setPrice(BigDecimal nuovoPrezzo) {
+        this.prezzo = nuovoPrezzo.setScale(2, RoundingMode.DOWN);
+    }
+
+    public void setTax(BigDecimal nuovaIva) {
+        this.iva = nuovaIva.setScale(2, RoundingMode.DOWN);
+    }
+
+    public void setDescription(String nuovaDescrizione) {
+        this.descrizione = nuovaDescrizione;
+    }
 }
 // creiamo il modello del prodotto
 // - codice (numero intero)

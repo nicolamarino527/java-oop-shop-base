@@ -21,6 +21,28 @@ public class Main {
                 new BigDecimal(25.99),
                 new BigDecimal(0.22));
 
+        // System.out.println("prezzo base: " + lampada.getBasePrice());
+        // System.out.println("prezzo incluso di iva: " +
+        // lampada.getTaxInclusivePrive());
+        // System.out.println("nome esteso: " + lampada.getFullName());
+
+        // System.out.println("prezzo base: " + sveglia.getBasePrice());
+        // System.out.println("prezzo incluso di iva: " +
+        // sveglia.getTaxInclusivePrive());
+        // System.out.println("nome esteso: " + sveglia.getFullName());
+
+        portafoglio.setName("portafoglio in pelle");
+        portafoglio.setBrand("safe money");
+        portafoglio.setDescription("portafoglio ad alta sicurezza");
+        portafoglio.setPrice(new BigDecimal(35.99));
+        portafoglio.setTax(new BigDecimal(0.21));
+
+        System.out.println(portafoglio.getName());
+        System.out.println(portafoglio.getBrand());
+        System.out.println(portafoglio.getDescription());
+        System.out.println(portafoglio.getBasePrice());
+        System.out.println(portafoglio.getTaxes());
+        System.out.println(portafoglio.getTaxInclusivePrive());
     }
 
 }
