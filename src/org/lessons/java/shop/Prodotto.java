@@ -9,25 +9,45 @@ public class Prodotto {
     Random rand = new Random();
 
     // caratteristiche prodotto
-    public int codice;
-    public String nome;
-    public String descrizione;
-    public BigDecimal prezzo;
-    public BigDecimal iva;
+    private int codice;
+    private String nome;
+    private String marca;
+    private BigDecimal prezzo;
+    private BigDecimal iva;
+    private String descrizione;
 
     // inizzializziamo l'istanza tramite costruttore
-    public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva) {
+    public Prodotto(String nome, BigDecimal prezzo, BigDecimal iva, String descrizione) {
         this.codice = rand.nextInt(99999);
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.iva = iva;
+
+    }
+
+    // creiamo un secondo costruttore
+    public Prodotto(String nome, String marca, BigDecimal prezzo, BigDecimal iva) {
+        this.codice = rand.nextInt(99999);
+        this.nome = nome;
+        this.marca = marca;
+        this.prezzo = prezzo;
+        this.iva = iva;
+
     }
 
     // metodi getter
 
     public int getCode() {
         return this.codice;
+    }
+
+    public String getName() {
+        return this.nome.toLowerCase();
+    }
+
+    public String getBrand() {
+        return this.marca;
     }
 
     public BigDecimal getBasePrice() {
@@ -41,6 +61,7 @@ public class Prodotto {
     public String getFullName() {
         return this.nome + "-" + this.codice;
     }
+
 }
 // creiamo il modello del prodotto
 // - codice (numero intero)
